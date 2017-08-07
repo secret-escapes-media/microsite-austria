@@ -1,0 +1,33 @@
+<div class="banner banner--home js-fading-backgrounds">
+  <div class="banner__wrap row row--padding align-center">
+
+    {% if page.banner-supertitle %}
+      <span class="title title--smaller title--expanded title--sup title--upper">{{page.banner-supertitle}}</span>
+    {% endif %}
+
+    <h1 class="title title--display title--banner title--largest title--expanded js-fit-text">{{page.banner-title}}</h1>
+
+    {% if page.banner-subtitle %}
+      <span class="title title--smaller title--sub">{{page.banner-subtitle}}</span>
+    {% endif %}
+
+  </div>
+  <div class="banner__nav">
+    {% include microsite-nav.html %}
+  </div>
+  <div class="banner__overlay"></div>
+
+  <div class="banner__bg js-fading-background" style="background-image: url({{site.baseurl}}/img/bg/banner-overview/01.jpg);">
+    <div class="banner__credit">Sebastian Stiphout / Österreich Werbung</div>
+  </div>
+  <div class="banner__bg js-fading-background" style="background-image: url({{site.baseurl}}/img/bg/banner-overview/02.jpg);">
+    <div class="banner__credit">Peter Burgstaller / Österreich Werbung</div>
+  </div>
+  <div class="banner__bg js-fading-background" style="background-image: url({{site.baseurl}}/img/bg/banner-overview/03.jpg);">
+    <div class="banner__credit">Peter Burgstaller / Österreich Werbung</div>
+  </div>
+  <div class="banner__bg js-fading-background" style="background-image: url({{site.baseurl}}/img/bg/banner-overview/04.jpg);">
+    <div class="banner__credit">WEST4MEDIA/ Österreich Werbung</div>
+  </div>
+
+</div>

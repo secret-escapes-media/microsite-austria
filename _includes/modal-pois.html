@@ -1,0 +1,35 @@
+<div class="js-modal modal invert-text is-closed">
+  <div class="modal__ui-wrap row">
+    <div class="js-close-modal modal__close"></div>
+    <div class="js-modal-nav modal__nav modal__nav--next" data-nav-direction="next"></div>
+    <div class="js-modal-nav modal__nav modal__nav--previous" data-nav-direction="previous"></div>
+    <div class="modal__content-wrap row">
+      {% for topic in page.topics %}
+      {% for poi in topic.pois %}
+      <div class="modal__content modal__content--{{poi.title | slugify}}" data-content-category="{{topic.id}}">
+        <div class="bg-image bg-image--ratio bg-image--ratio-16-9" style="background-image:url('{{site.baseurl}}/img/content/{{topic.id}}/{{poi.title | slugify}}.jpg')">{% if poi.image-credit %}<span class="bg-image-ratio__credit js-image-credit">{{poi.image-credit}}</span>{% endif %}</div>
+        <div class="modal__content--padding align-center">
+
+          <h2 class="title title--medium title--display">{{poi.title}}</h2>
+
+          {% if poi.details %}
+            <div class="modal__details">
+              {% for detail in poi.details %}
+              <span class="modal__details-item">{{detail.item}}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            <hr class="hr--center">
+          {% endif %}
+
+          {{poi.description}}
+
+          <a href="{{poi.link}}" target="_blank" class="btn btn--red">Find out more</a>
+
+        </div>
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

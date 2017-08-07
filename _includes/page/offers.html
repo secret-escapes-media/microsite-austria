@@ -1,0 +1,23 @@
+
+
+<section id="offers" class="section topic" style="background-image: url('{{site.baseurl}}/img/bg/offers.jpg');">
+
+  <section class="row row--padding align-center">
+    <h2 class="title title--largest title--display">{{ page.offers-title }}</h2>
+    <span class="title title--sub title--micro">{{ page.offers-subtitle }}</span>
+    {% if page.offers-text %}
+      <hr class="hr--center">
+      {{ page.offers-text }}
+    {% endif %}
+  </section>
+
+  <section>
+    <div class="row row--padding">
+      {% assign offers = site.data.offers %}
+      {% for offer in offers %}
+        {% include offer.html %}
+      {% endfor %}
+    </div>
+  </section>
+
+</section>

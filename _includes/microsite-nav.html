@@ -1,0 +1,11 @@
+<div class="site-nav">
+  <div class="row">
+    <ul class="site-nav__list">
+      {% assign topics = page.topics %}
+      {% for topic in topics %}
+        <li class="site-nav__item site-nav__item--{{ topic.id }}"><a class="site-nav__link" href="#{{ topic.id }}">{{ topic.title }}</a></li>
+      {% endfor %}
+      <li class="site-nav__item site-nav__item--offers"><a class="site-nav__link" href="#offers">Offers</a></li>
+    </ul>
+  </div><!-- END - .row -->
+</div><!-- END - .site-nav -->

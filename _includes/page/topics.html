@@ -1,0 +1,50 @@
+
+{% assign topics = page.topics %}
+{% for topic in topics %}
+
+  {% if forloop.last %}
+    {% include page/image-divide.html %}
+  {% endif %}
+
+  <section id="{{topic.id}}" class="section topic" style="background-image: url('{{site.baseurl}}/img/bg/{{topic.id}}.jpg');">
+    <div class="row row--padding">
+
+
+
+      <section class="row align-center">
+
+        <h2 class="title title--largest title--display">{{topic.title}}</h2>
+        <span class="title title--sub title--micro">{{topic.subtitle}}</span>
+        <hr class="hr--center">
+        {{topic.text}}
+
+      </section>
+
+      <section>
+      {% assign pois = topic.pois %}
+      {% for poi in pois %}
+        <a href="javascript:void(0);" class="poi row row--narrow row--columns-5-7 row--columns-vertical-align js-open-modal" data-modal-id="{{poi.title | slugify}}">
+
+          <div class="poi__image bg-image bg-image--ratio bg-image--ratio-16-9 bg-image--large--ratio-3-4 bg-image--xxlarge--ratio-1-1 row__column" style="background-image: url('{{site.baseurl}}/img/content/{{topic.id}}/{{poi.title | slugify}}.jpg');">
+            {% if poi.image-caption %}
+            <div class="bg-image__credit">{{ poi.image-caption }}</div>
+            {% endif %}
+          </div>
+
+          <div class="poi__text row__column">
+            <h3 class="title title--smaller title--upper title--expanded title--display">{{poi.title}}</h3>
+            <h5 class="title title--micro">{{poi.subtitle}}</h5>
+            <hr>
+            <p>{{poi.description | truncate:255 | strip_html}}</p>
+            <span href="#" class="btn btn--outline btn--small">Read more</span>
+          </div>
+
+        </a>
+      {% endfor %}
+      </section>
+
+
+
+    </div>
+  </section>
+{% endfor %}

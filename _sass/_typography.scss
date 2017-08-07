@@ -1,0 +1,149 @@
+// general typographic styles
+
+
+// -------- root typography styles --------
+
+$core-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+$main-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+$title-font-family: 'Domine', serif;
+$display-font-family: 'Unica One', 'Helvetica Neue', sans-serif;
+
+html { font-size:62.5%; }
+body,
+input, textarea, keygen, select, button {
+  font: 400 14px/1.728 $main-font-family;
+  -webkit-text-size-adjust: 100%;
+  @include bp(medium) {
+    font-size: 15px;
+  }
+  color: $white;
+}
+
+a:hover, a:hover * { text-decoration: none !important; }
+
+// -------- Headings --------
+
+.title {
+  font-weight: 200;
+  letter-spacing: .015em;
+  line-height: 1.4;
+  font-family: $title-font-family;
+  display: block;
+  max-width: 960px;
+  .align-center & { margin-left: auto; margin-right: auto; }
+  + * { margin-top: 0.5em; }
+  &--margin-none + * { margin-top: 0; }
+
+  &--display {
+    font-family: $display-font-family;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  &--serif { font-family: $title-font-family; }
+  &--spacing {
+    * + & { margin-top: 15px; }
+  }
+  &--extra-margin { margin-top: 1.5em; }
+  &--sup  {
+    + * { margin-top: 15px; }
+  }
+  &--sub  { margin-top: 15px; }
+
+  &--light     { font-weight: 200; }
+  &--bold      { font-weight: 700; }
+  &--expanded  { letter-spacing: .15em; }
+  &--expanded-extra  { letter-spacing: .35em; }
+  &--condense  { letter-spacing: 0; }
+  &--tight     { line-height: .9; }
+  &--tighter   { line-height: .8; }
+  &--upper     { text-transform: uppercase; }
+  &--italic    { font-style: italic; }
+
+  &--largest {
+    font-size: 4.3em;
+    &-sub {
+      display: block;
+      font-size: .55em;
+    }
+  }
+  &--larger      { font-size: 2.986em; }
+  &--large       { font-size: 2.488em; }
+  &--medium      { font-size: 2.25em; }
+  &--small       { font-size: 1.5em; }
+  &--smaller     { font-size: 1.867em; }
+  &--smallest    { font-size: 1.2em; }
+  &--tiny        { font-size: 1.2em; }
+  &--micro       { font-size: 1.2em; }
+  @include bp(large){
+    &--small       { font-size: 1.867em; }
+    &--smallest    { font-size: 1.5em; }
+    &--tiny        { font-size: 1.44em; }
+    &--micro       { font-size: 1.2em; }
+  }
+  @include bp(xxlarge){
+    &--giant     { font-size: 6.192em; }
+    &--largest     { font-size: 5.192em; }
+    &--larger      { font-size: 4em; }
+    &--large       { font-size: 3.586em; }
+    &--large       { font-size: 2.986em; }
+    &--small       { font-size: 2.467em; }
+    &--smaller     { font-size: 2.25em; }
+    &--smallest    { font-size: 1.9em; }
+    &--tiny        { font-size: 1.5em; }
+    &--micro        { font-size: 1.3em; }
+  }
+
+  &--banner {
+    font-size: 4em;
+    line-height: 0.85;
+    @include bp(xlarge){
+      font-size: 9em;
+    }
+  }
+}
+
+.p {
+  @include bp(large){
+    &--lead, &--large {
+      line-height: 1.65;
+      font-size: 1.2em;
+    }
+  }
+  &--small { font-size: 0.9em; }
+}
+
+
+// -------- general content styles --------
+
+p             { max-width: 780px; }
+p + *         { margin-top: 1em; }
+li            { list-style-position: inside; }
+ul li         { list-style-type: disc; }
+ol li         { list-style-type: decimal; }
+em            { font-style: italic; }
+strong        { font-weight: 800; }
+.align-left   { text-align: left; }
+.align-right  { text-align: right; }
+.align-center { text-align: center; }
+.align-center p { margin-left: auto; margin-right: auto; }
+
+.mobile-align-center {
+  text-align: center;
+  @include bp(large){
+    text-align: left;
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: rgba($white, 0.2);
+  margin: 1em 0;
+  .title + & { margin-top: 1em; }
+}
+.hr {
+  &--center {
+    margin-left: auto; margin-right: auto;
+    width: 80px;
+  }
+}
