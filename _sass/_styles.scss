@@ -79,10 +79,11 @@ body { background-color: $black; }
   }
 
   &__credit {
+    text-align: right;
     position: absolute;
     z-index: 3;
     right: 0;
-    bottom: 70px;
+    bottom: 50px;
     display: block;
     padding: 1em;
     font-size: .8em;
@@ -98,6 +99,9 @@ body { background-color: $black; }
     &:focus {
       background-color: rgba(#232833,.85);
       opacity: 1;
+    }
+    @include bp(large){
+      bottom: 70px;
     }
   }
 

@@ -5,6 +5,19 @@
   background-color: $white;
   border-radius: 4px;
   overflow: hidden;
+  &__column {
+    @include bp(xlarge){
+      @include layout(12);
+      @include gallery(6);
+      margin-bottom: gutter(12);
+      // centers single offer
+      &:nth-child(odd):last-child{
+        margin-right: auto;
+        margin-left: auto;
+        float: none !important;
+      }
+    }
+  }
 
   & + & { margin-top: 2em; }
 
@@ -44,6 +57,16 @@
   }
   &__content {
     padding: $margin;
+    overflow: hidden;
+    @include bp(xlarge){
+      margin-left: 50%;
+    }
+  }
+  &__image {
+    @include bp(xlarge){
+      position: absolute !important;
+      height: 100%;
+    }
   }
   &__location {
     margin-top: 0.3em;

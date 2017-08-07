@@ -12,8 +12,9 @@
 
           <h2 class="title title--medium title--display">{{poi.title}}</h2>
 
-          {% if poi.details %}
+          {% if poi.details or poi.location %}
             <div class="modal__details">
+              <span class="modal__details-item modal__details-location">{{poi.location}}</span>
               {% for detail in poi.details %}
               <span class="modal__details-item">{{detail.item}}</span>
               {% endfor %}

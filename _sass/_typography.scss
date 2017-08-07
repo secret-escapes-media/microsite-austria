@@ -96,6 +96,9 @@ a:hover, a:hover * { text-decoration: none !important; }
   &--banner {
     font-size: 4em;
     line-height: 0.85;
+    @include bp(large){
+      font-size: 6.8em;
+    }
     @include bp(xlarge){
       font-size: 9em;
     }
