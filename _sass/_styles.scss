@@ -89,10 +89,16 @@ body { background-color: $black; }
     font-weight: 500;
     line-height: 1;
     color: white;
-    background-color: rgba($black,.5);
+    background-color: rgba(#232833,.5);;
     transition: all ($transition-time*2.5) ease;
     border-top-left-radius: 3px;
-    opacity: 1;
+    opacity: .66;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: rgba(#232833,.85);
+      opacity: 1;
+    }
   }
 
 }

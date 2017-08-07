@@ -29,9 +29,6 @@
     $('html').addClass('touch');
   }
 
-  // fit text for the main title
-  // $('.js-fit-text').fitText(0.75);
-
 
 ///////////////////////////////////////
 //        Navigation
@@ -42,9 +39,9 @@
     $('.mobile-nav').toggleClass('is-open').toggleClass('is-closed');
   });
 
-  // current page nav highlight
-  var currentPage = $('body').data('current-page');
-  $('.' + currentPage + ' .site-nav__item--' + currentPage).addClass('site-nav__item--current');
+  // // current page nav highlight
+  // var currentPage = $('body').data('current-page');
+  // $('.' + currentPage + ' .site-nav__item--' + currentPage).addClass('site-nav__item--current');
 
 
 ///////////////////////////////////////
@@ -79,7 +76,7 @@ $(window).scroll(function(){
   }
 
 
-  
+
   ///////////////////////////////////////
   //           Image slider
   ///////////////////////////////////////

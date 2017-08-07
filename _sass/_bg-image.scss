@@ -169,8 +169,6 @@
     }
   }
 
-
-
   &__credit{
     position: absolute;
     right: 0;
@@ -184,13 +182,9 @@
     background-color: rgba($black,.25);
     transition: all ($transition-time*2.5) ease;
     border-top-left-radius: 3px;
-    opacity: 1;
-  }
-  &:hover &__credit {
-    // text appears on hover
     &:hover {
       color: $white;
-      background-color: rgba($black,.5);
+      background-color: rgba($black,.75);
     }
   }
 
